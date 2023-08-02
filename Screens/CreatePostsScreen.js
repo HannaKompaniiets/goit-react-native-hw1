@@ -245,6 +245,12 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     lineHeight: 19,
   },
+  postName: {
+    flex: 1,
+  },
+  postLocation: {
+    flex: 1,
+  },
   locationIcon: {
     marginRight: 8,
   },

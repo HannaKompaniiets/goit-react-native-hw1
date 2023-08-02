@@ -17,7 +17,7 @@ import { useRoute } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/Feather";
 import postSelectors from "../redux/post-selectors";
 import { getPost, addComment } from "../redux/post-operations";
-import { nanoid } from "nanoid";
+import uuid from "react-native-uuid";
 
 export default function CommentsScreen() {
   const dispatch = useDispatch();
@@ -37,11 +37,11 @@ export default function CommentsScreen() {
 
   const addNewComment = () => {
     const comment = {
-      id: nanoid(),
+      id: uuid.v4(),
       authorId: userId,
       message: newComment,
-      creationDate: new Date().toString()
-    }
+      creationDate: new Date().toString(),
+    };
     dispatch(addComment({ comment, id: postId }));
   };
 
